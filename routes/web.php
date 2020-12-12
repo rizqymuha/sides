@@ -15,9 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
-    return view('admin.user.index');
-});
+Route::get('/admin', function () {
+    return 'admin page';
+})->name('admin');
 
 Auth::routes(['verify' => true]);
 

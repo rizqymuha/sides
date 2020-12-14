@@ -25,7 +25,7 @@ class CreateIdentitiesTable extends Migration
             $table->string('address');
             $table->unsignedBigInteger('hamlet_id');
             $table->string('village');
-            $table->integer('postal_code');
+            $table->string('postal_code');
             $table->unsignedBigInteger('district_id');
             $table->string('religion');
             $table->string('marital_status');
@@ -38,7 +38,7 @@ class CreateIdentitiesTable extends Migration
             $table->string('tspc_or_pspc')->nullable();
             $table->string('father');
             $table->string('mother');
-            $table->integer('phone');
+            $table->string('phone');
             $table->string('idc_image');
             $table->string('fc_image');
             $table->timestamps();

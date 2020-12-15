@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Hamlet;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 
-class HamletController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexHamlet()
     {
-        return view('admin.hamlet.index');
+        return view('admin.users.hamlet.index');
     }
 
     /**
@@ -24,9 +23,9 @@ class HamletController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function createHamlet()
     {
-        return view('admin.hamlet.create');
+        return view('admin.users.hamlet.create');
     }
 
     /**
@@ -35,7 +34,7 @@ class HamletController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeHamlet(Request $request)
     {
         $user = User::create([
             'name' => $request->name,
@@ -45,7 +44,7 @@ class HamletController extends Controller
 
         $user->assignRole('hamlet');
 
-        return redirect()->route('admin.hamlet');
+        return redirect()->route('admin.user.hamlet');
     }
 
     /**
@@ -65,9 +64,9 @@ class HamletController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hamlet $hamlet)
+    public function edit($id)
     {
-        dd($hamlet);
+        //
     }
 
     /**

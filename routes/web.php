@@ -11,6 +11,9 @@
 |
 */
 
+use App\Hamlet;
+use App\User;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +21,11 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+
+// for tes
+Route::get('/tes', function () {
+    $user = User::find(2)->identity->hamlet_id;
+    $hamlet = Hamlet::find($user)->number;
+
+    dd($hamlet);
+});

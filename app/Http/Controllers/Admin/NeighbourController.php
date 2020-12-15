@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Neighbour;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class NeighbourController extends Controller
@@ -14,7 +14,7 @@ class NeighbourController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.neighbour.index');
     }
 
     /**
@@ -41,10 +41,10 @@ class NeighbourController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Neighbour  $neighbour
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Neighbour $neighbour)
+    public function show($id)
     {
         //
     }
@@ -52,10 +52,10 @@ class NeighbourController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Neighbour  $neighbour
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Neighbour $neighbour)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +64,10 @@ class NeighbourController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Neighbour  $neighbour
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Neighbour $neighbour)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +75,10 @@ class NeighbourController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Neighbour  $neighbour
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Neighbour $neighbour)
+    public function destroy($id)
     {
         //
     }

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Hamlet;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class HamletController extends Controller
@@ -14,7 +14,7 @@ class HamletController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.hamlet.index');
     }
 
     /**
@@ -41,10 +41,10 @@ class HamletController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Hamlet  $hamlet
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Hamlet $hamlet)
+    public function show($id)
     {
         //
     }
@@ -52,10 +52,10 @@ class HamletController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Hamlet  $hamlet
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hamlet $hamlet)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +64,10 @@ class HamletController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Hamlet  $hamlet
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hamlet $hamlet)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +75,10 @@ class HamletController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Hamlet  $hamlet
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hamlet $hamlet)
+    public function destroy($id)
     {
         //
     }

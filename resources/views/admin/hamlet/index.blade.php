@@ -9,21 +9,14 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-          <table id="example1" class="table table-bordered table-striped">
+          <table id="hamlet-table" class="table table-bordered table-striped">
             <thead>
                 <tr>
+                    <th>No</th>
                     <th>Nama</th>
                     <th>email</th>
-                    <th>Rukun Warga</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Rizky</td>
-                    <td>rizky@mail.com</td>
-                    <td>111</td>
-                </tr>
-            </tbody>
           </table>
         </div>
         <!-- /.card-body -->
@@ -33,3 +26,20 @@
     <!-- /.col -->
   </div>
 @endsection
+
+@push('script')
+    <script>
+        $(function() {
+            $('#hamlet-table').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('admin.hamlet.data') }}",
+                columns: [
+                    { data: 'DT_RowIndex', orderable: false, searchable: false },
+                    { data: 'name' },
+                    { data: 'email' },
+                ]
+            });
+        });
+    </script>
+@endpush

@@ -11,11 +11,7 @@ class DataController extends Controller
     public function hamletUsers()
     {
         return datatables()->of(User::query()->role('hamlet')->orderBy('name', 'ASC'))
-            ->addColumn('action', function(User $user) {
-                return '
-                    <a href="' . route('admin.hamlet.user.edit', $user) .'" class="btn btn-info btn-sm">Edit</a>
-                ';
-            })
+            ->addColumn('action', 'admin.users.hamlet.action')
             ->addIndexColumn()
             ->toJson();
     }

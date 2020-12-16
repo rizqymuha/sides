@@ -29,6 +29,12 @@
   </div>
 @endsection
 
+<form action="" id="delete-form" method="POST">
+    @csrf
+    @method("DELETE")
+    <button style="display: none">Hapus</button>
+</form>
+
 @push('script')
     <script>
         $(function() {

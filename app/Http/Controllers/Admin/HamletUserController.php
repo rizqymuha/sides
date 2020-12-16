@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Hamlet;
 use App\Http\Controllers\Controller;
+use App\Profile;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -67,7 +68,12 @@ class HamletUserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin.users.hamlet.edit', ['user' => $user]);
+        $hamlets = Hamlet::query()->get();
+        $data = [
+            'user' => $user,
+            'hamlets' => $hamlets,
+        ];
+        return view('admin.users.hamlet.edit', $data);
     }
 
     /**
@@ -83,6 +89,22 @@ class HamletUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
         ]);
+
+        $profile = new Profile();
+
+        if($user->profile == null) {
+            $profile->create([
+                'user_id' => $request->id,
+                'phone' => $request->phone,
+                'hamlet_id' => $request->hamlet_id,
+            ]);
+        } else {
+            $profile->update([
+                'user_id' => $request->id,
+                'phone' => $request->phone,
+                'hamlet_id' => $request->hamlet_id,
+            ]);
+        }
 
         return redirect()->route('admin.hamlet.user.index');
     }

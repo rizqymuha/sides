@@ -23,6 +23,19 @@
                             <label for="email">Email</label>
                             <input type="email" name="email" class="form-control" id="email" placeholder="Masukkan email" required value="{{ $user->email }}">
                         </div>
+                        <div class="form-group">
+                            <label for="phone">Nomor telepon</label>
+                            <input type="phone" name="phone" class="form-control" id="phone" placeholder="Masukkan nomor telepon" required value="{{ $user->profile == null ? '' : $user->profile->phone }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="hamlet">Nomor RW</label>
+                            <select id="hamlet" name="hamlet_id" class="form-control">
+                                <option selected>Pilih nomor...</option>
+                                @foreach($hamlets as $hamlet)
+                                    <option value="{{ $hamlet->id }}" {{ $user->profile == null ? '' : $user->profile->hamlet_id == $hamlet->id ? 'selected' : ''}}>{{ $hamlet->number }}</option>
+                                @endforeach
+                            </select>                        
+                        </div>
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">

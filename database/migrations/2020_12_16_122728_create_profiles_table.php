@@ -18,7 +18,7 @@ class CreateProfilesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('phone');
             $table->string('hamlet_id');
-            $table->string('neighbour_id');
+            $table->string('neighbour_id')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

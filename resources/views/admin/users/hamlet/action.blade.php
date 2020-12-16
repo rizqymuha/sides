@@ -1,5 +1,6 @@
-<a href="{{ route('admin.hamlet.user.edit', $model) }}" class="btn btn-info btn-sm">Edit</a>
+<a href="{{ route('admin.hamlet.user.edit', $model) }}" class="btn btn-secondary btn-sm">Edit</a>
 <button href="{{ route('admin.hamlet.user.destroy', $model) }}" id="delete" class="btn btn-danger btn-sm">Hapus</button>
+<a href="{{ route('admin.hamlet.user.show', $model) }}" class="btn btn-info btn-sm">Detail</a>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script>

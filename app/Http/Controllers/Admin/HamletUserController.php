@@ -56,9 +56,15 @@ class HamletUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        $hamletId = $user->profile['hamlet_id'];
+        $hamlet = Hamlet::find($hamletId);
+        $data = [
+            'user' => $user,
+            'hamlet' => $hamlet,
+        ];
+        return view('admin.users.hamlet.show', $data);
     }
 
     /**

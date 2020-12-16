@@ -10,5 +10,6 @@ Route::post('/hamlet/user/store', 'HamletUserController@store')->name('hamlet.us
 Route::get('/hamlet/user/{user}/edit', 'HamletUserController@edit')->name('hamlet.user.edit');
 Route::put('/hamlet/user/{user}', 'HamletUserController@update')->name('hamlet.user.update');
 Route::delete('/hamlet/user/{user}', 'HamletUserController@destroy')->name('hamlet.user.destroy');
+Route::get('/hamlet/user/{user}/show', 'HamletUserController@show')->name('hamlet.user.show');
 
 Route::get('/hamlet/user/data', 'DataController@hamletUsers')->name('hamlet.user.data');

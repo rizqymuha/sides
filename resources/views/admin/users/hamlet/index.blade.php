@@ -15,7 +15,8 @@
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
-                            <th>email</th>
+                            <th>Email</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                 </table>
@@ -39,6 +40,7 @@
                     { data: 'DT_RowIndex', orderable: false, searchable: false },
                     { data: 'name' },
                     { data: 'email' },
+                    { data: 'action' },
                 ]
             });
         });

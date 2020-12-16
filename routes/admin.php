@@ -4,6 +4,6 @@ Route::get('/', 'HomeController@index')->name('dashboard');
 
 Route::get('/neighbour', 'NeighbourController@index')->name('neighbour');
 
-Route::get('/hamlet', 'HamletController@index')->name('hamlet');
+Route::get('/hamlet/user', 'HamletUserController@index')->name('hamlet.user.index');
 
-Route::get('/hamlet/data', 'DataController@hamlets')->name('hamlet.data');
+Route::get('/hamlet/user/data', 'DataController@hamletUsers')->name('hamlet.user.data');

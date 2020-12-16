@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class DataController extends Controller
 {
-    public function hamlets()
+    public function hamletUsers()
     {
         return datatables()->of(User::query()->role('hamlet')->orderBy('name', 'ASC'))
             ->addIndexColumn()

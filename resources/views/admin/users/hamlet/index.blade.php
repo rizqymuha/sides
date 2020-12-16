@@ -34,7 +34,7 @@
             $('#hamlet-table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('admin.hamlet.data') }}",
+                ajax: "{{ route('admin.hamlet.user.data') }}",
                 columns: [
                     { data: 'DT_RowIndex', orderable: false, searchable: false },
                     { data: 'name' },

@@ -17,7 +17,7 @@ class HamletUserController extends Controller
      */
     public function index()
     {
-        return view('admin.users.hamlet.index');
+        return view('admin.users.hamlet.index', ['title' => 'Data Pengguna Rukun Warga']);
     }
 
     /**
@@ -27,7 +27,7 @@ class HamletUserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.hamlet.create');
+        return view('admin.users.hamlet.create', ['title' => 'Tambah Data Pengguna Rukun Warga']);
     }
 
     /**
@@ -61,6 +61,7 @@ class HamletUserController extends Controller
         $hamletId = $user->profile['hamlet_id'];
         $hamlet = Hamlet::find($hamletId);
         $data = [
+            'title' => 'Detail Pengguna Rukun Warga',
             'user' => $user,
             'hamlet' => $hamlet,
         ];
@@ -77,6 +78,7 @@ class HamletUserController extends Controller
     {
         $hamlets = Hamlet::query()->get();
         $data = [
+            'title' => 'Edit Data Pengguna Rukun Warga',
             'user' => $user,
             'hamlets' => $hamlets,
         ];

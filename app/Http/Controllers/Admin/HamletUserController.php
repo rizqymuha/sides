@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 
 class HamletUserController extends Controller
@@ -24,7 +25,7 @@ class HamletUserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.users.hamlet.create');
     }
 
     /**
@@ -35,7 +36,15 @@ class HamletUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
+
+        $user->assignRole('hamlet');
+
+        return redirect()->route('admin.hamlet.user.index');
     }
 
     /**

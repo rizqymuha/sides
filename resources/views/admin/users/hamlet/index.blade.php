@@ -9,7 +9,7 @@
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <a href="#" class="btn btn-primary mb-3">Tambah Data</a>
+                <a href="{{ route('admin.hamlet.user.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
                 <table id="hamlet-table" class="table table-bordered table-striped">
                     <thead>
                         <tr>

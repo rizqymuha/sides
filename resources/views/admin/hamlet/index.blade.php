@@ -3,24 +3,25 @@
 @section('content')
 <div class="row">
     <div class="col-12">
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Data Pengguna Rukun Warga</h3>
-        </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-          <table id="hamlet-table" class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>email</th>
-                </tr>
-            </thead>
-          </table>
-        </div>
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Data Pengguna Rukun Warga</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <a href="#" class="btn btn-primary mb-3">Tambah Data</a>
+                <table id="hamlet-table" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>email</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         <!-- /.card-body -->
-      </div>
+        </div>
       <!-- /.card -->
     </div>
     <!-- /.col -->

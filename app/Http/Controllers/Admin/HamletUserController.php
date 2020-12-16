@@ -46,7 +46,8 @@ class HamletUserController extends Controller
 
         $user->assignRole('hamlet');
 
-        return redirect()->route('admin.hamlet.user.index');
+        return redirect()->route('admin.hamlet.user.index')
+                    ->with('success', 'Data berhasil ditambahkan!');
     }
 
     /**
@@ -106,7 +107,8 @@ class HamletUserController extends Controller
             ]);
         }
 
-        return redirect()->route('admin.hamlet.user.index');
+        return redirect()->route('admin.hamlet.user.index')
+                    ->with('success', 'Data berhasil diedit!');;
     }
 
     /**
@@ -117,8 +119,10 @@ class HamletUserController extends Controller
      */
     public function destroy(User $user)
     {
+        $user->profile->delete();
         $user->delete();
 
-        return redirect()->route('admin.hamlet.user.index');
+        return redirect()->route('admin.hamlet.user.index')
+                    ->with('success', 'Data berhasil dihapus!');;
     }
 }

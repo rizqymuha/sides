@@ -10,6 +10,9 @@
             <!-- /.card-header -->
             <div class="card-body">
                 <a href="{{ route('admin.hamlet.user.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
+                @if (session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+                @endif
                 <table id="hamlet-table" class="table table-bordered table-striped">
                     <thead>
                         <tr>

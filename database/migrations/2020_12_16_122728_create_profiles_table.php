@@ -17,11 +17,17 @@ class CreateProfilesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('phone');
-            $table->string('hamlet_id');
-            $table->string('neighbour_id')->nullable();
+            $table->unsignedBigInteger('hamlet_id');
+            $table->unsignedBigInteger('neighbour_id')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')
+                ->onUpdate('CASCADE')
+                ->onDelete('CASCADE');
+            $table->foreign('hamlet_id')->references('id')->on('hamlets')
+                ->onUpdate('CASCADE')
+                ->onDelete('CASCADE');
+            $table->foreign('neighbour_id')->references('id')->on('neighbours')
                 ->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
         });

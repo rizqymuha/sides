@@ -29,8 +29,8 @@
                         </div>
                         <div class="form-group">
                             <label for="hamlet">Nomor RW</label>
-                            <select id="hamlet" name="hamlet_id" class="form-control">
-                                <option selected>Pilih nomor...</option>
+                            <select id="hamlet" name="hamlet_id" class="form-control" required>
+                                <option selected disabled>Pilih nomor...</option>
                                 @foreach($hamlets as $hamlet)
                                     <option value="{{ $hamlet->id }}" {{ $user->profile == null ? '' : $user->profile->hamlet_id == $hamlet->id ? 'selected' : ''}}>{{ $hamlet->number }}</option>
                                 @endforeach
